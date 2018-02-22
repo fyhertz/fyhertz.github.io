@@ -46,14 +46,17 @@ body {
     background: -ms-linear-gradient(-90deg, rgba(0,29,119,1) 0%,rgba(0,0,0,1) 80%,rgba(0,0,0,1) 100%);    
 }
 
-article {
+section {
     position: relative;
     margin: 0 10px;
     height: 100%;
-    z-index: 100;
+    z-index: 100;    
+}
+
+article {
+    display: table-cell;
+    vertical-align: middle;
     ul  {
-	display: table-cell;
-	vertical-align: middle;
 	font-weight: normal;
 	text-shadow: black 1px 1px 2px;
         list-style-type: none;
@@ -66,8 +69,8 @@ article {
             margin: 5px;
         }
         a {
-	         color: #CCC;
-	         text-decoration: none;
+	    color: #CCC;
+	    text-decoration: none;
         }
     }
     li {
@@ -107,9 +110,11 @@ article {
     #tree {
 	display: block;
     }
-    article {
+    section {
 	margin: 0 80px 0 80px;
 	display: table;
+    }
+    article {
 	li {
             -moz-transition: all .3s ease-out;
             -ms-transition: all .3s ease-out;

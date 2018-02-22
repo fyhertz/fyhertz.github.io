@@ -62,6 +62,8 @@
     }
 
     function drawBackground() {
+	var scaleFactor = height/1200;
+	
 	ctx = $('canvas')[0].getContext('2d');
 	ctx.strokeStyle = "rgba(0,0,0,0.6)";
 	ctx.shadowColor = "rgba(0,0,0,0.6)";
@@ -70,7 +72,7 @@
 
 	center.set(0.5*width,0.9*height);
 	f = function (t) {return (1-t)*(1-t);}
-	radius = 350, weight = 100;
+	radius = 350*scaleFactor, weight = 100*scaleFactor;
 	angle = 3*Math.PI/5;
 	loops = 3;
 	shrink = 1.6;
@@ -83,6 +85,7 @@
     }
 
     function drawTree() {
+	var scaleFactor = height/1200;
 	
 	ctx = $('canvas')[1].getContext('2d');
 	ctx.strokeStyle = "rgba(0,0,0,0.6)";
@@ -90,9 +93,9 @@
 	ctx.shadowOffsetX = 0;
 	ctx.shadowBlur = 70;
 
-	center.set(1.02*width,950);
+	center.set(1.02*width,0.80*height);
 	f = function (t) {return (1-t)*(1-t);}
-	radius = 450, weight = 60;
+	radius = 450*scaleFactor, weight = 60*scaleFactor;
 	angle = 4*Math.PI/5;
 	loops = 1;
 	shrink = 1.6;

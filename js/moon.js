@@ -3,11 +3,9 @@
 
     var face = ":)";
     var radius = 150;
-
     var p = new Vector2d();
     var center = new Vector2d();
     var m = new Vector2d();
-
     var ctx;
     var width, height;
     var state = 0;
