@@ -13,7 +13,7 @@
     var resetTimer = 0;
     
     function handleMouse(event) {
-	p.set(window.event.clientX, window.event.clientY);
+	p.set(event.clientX, event.clientY);
     }
     
     function init() {
