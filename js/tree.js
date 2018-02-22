@@ -12,7 +12,8 @@
     var position;
     var nmax;
     var colors;
-
+    var width, height;
+    
     function drawInnerCurve(center, f, step, loops, sens, angle) {
 	var na, v = new Vector2d();
 	ctx.vectorMoveTo(v.set(center).move(angle,f(0)));
@@ -60,23 +61,14 @@
 	}    
     }
 
-    $(document).ready(function () {
-
-	var m = "simon";
-	m += "@";
-	m += "guigui.us";
-	$("#m").text(m).attr("href", "mailto:" + m);
-	
-	var canvas = $('canvas');
-	canvas.attr('height',$(window).height()).attr('width',$(window).width());
-
-	ctx = canvas[0].getContext('2d');
+    function drawBackground() {
+	ctx = $('canvas')[0].getContext('2d');
 	ctx.strokeStyle = "rgba(0,0,0,0.6)";
 	ctx.shadowColor = "rgba(0,0,0,0.6)";
 	ctx.shadowOffsetX = 0;
 	ctx.shadowBlur = 70;
 
-	center.set(1050,900);
+	center.set(0.5*width,0.9*height);
 	f = function (t) {return (1-t)*(1-t);}
 	radius = 350, weight = 100;
 	angle = 3*Math.PI/5;
@@ -88,14 +80,17 @@
 	colors = function (n) {return "#FFFFFF";}
 	
 	drawSquid(center, radius, weight, loops, 1, angle, 0);
+    }
 
-	ctx = canvas[1].getContext('2d');
+    function drawTree() {
+	
+	ctx = $('canvas')[1].getContext('2d');
 	ctx.strokeStyle = "rgba(0,0,0,0.6)";
 	ctx.shadowColor = "rgba(0,0,0,0.6)";
 	ctx.shadowOffsetX = 0;
 	ctx.shadowBlur = 70;
 
-	center.set(1950,950);
+	center.set(1.02*width,950);
 	f = function (t) {return (1-t)*(1-t);}
 	radius = 450, weight = 60;
 	angle = 4*Math.PI/5;
@@ -109,7 +104,21 @@
 	}
 	
 	drawSquid(center, radius, weight, loops, 1, angle, 0);
+    }
+    
+    $(document).ready(function () {
+	var m = "simon";
+	m += "@";
+	m += "guigui.us";
+
+	width = $(window).width();
+	height = $(window).height(); 
+
+	$("#m").text(m).attr("href", "mailto:" + m);
+	$('canvas').attr('height', height).attr('width',width);
 	
+	drawBackground();
+	if ($('#tree').attr('display') != 'none') drawTree();
 	
     });
 

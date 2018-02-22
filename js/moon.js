@@ -3,10 +3,11 @@
 
     var face = ":)";
     var radius = 150;
-    var center = new Vector2d(1080, 300);
-    var m = new Vector2d(1080, -300);
 
     var p = new Vector2d();
+    var center = new Vector2d();
+    var m = new Vector2d();
+
     var ctx;
     var width, height;
     var state = 0;
@@ -21,6 +22,10 @@
 	
 	width =  $(window).width();
 	height = $(window).height();
+
+	center = new Vector2d(0.64*width, 300);
+	m = new Vector2d(0.64*width, -300);
+	
 	canvas.attr('height', height).attr('width', width);
 	ctx = canvas[0].getContext('2d');
 	ctx.strokeStyle = "rgba(0,0,0,1)";
