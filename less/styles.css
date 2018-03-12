@@ -115,6 +115,12 @@ article {
 	display: table;
     }
     article {
+	ul {
+	    img {
+		width: 70px;
+		height: 70px;
+	    }
+	}
 	li {
             -moz-transition: all .3s ease-out;
             -ms-transition: all .3s ease-out;
@@ -131,6 +137,12 @@ article {
         }
     }
     
+}
+
+@media (min-width: 2500px) {
+    html {
+	font-size: 1.9em;	
+    }
 }
 
 footer {
