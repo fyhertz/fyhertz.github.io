@@ -112,7 +112,7 @@
     $(document).ready(function () {
 	var m = "simon";
 	m += "@";
-	m += "guigui.us";
+	m += "guigui.uk";
 
 	width = $(window).width();
 	height = $(window).height(); 
